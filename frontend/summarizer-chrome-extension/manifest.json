@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "ContentIQ",
+  "version": "1.0.0",
+  "description": "Analyze text with precision: extract topics, domains, entities, and entailments seamlessly.",
+  "permissions": ["activeTab", "sidePanel"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "side_panel": {
+    "default_path": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
